@@ -5,7 +5,7 @@ RSpec.describe Resident, type: :model do
   describe 'validations' do
     it {should validate_presence_of :name}
     it {should validate_presence_of :age}
-    it {should validate_presence_of :house}
+    it {should validate_presence_of :occupation}
   end
 
   describe 'relationships' do
