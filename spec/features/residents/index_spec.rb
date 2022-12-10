@@ -7,7 +7,7 @@ RSpec.describe 'resident index page' do
     resident3 = Resident.create!(name: "Miles Morales", age: 18, occupation: "Student/Spiderman")
 
     visit '/residents'
-    
+
     expect(page).to have_content("Name: Jessica Rabbit")
     expect(page).to have_content("Name: Seth Rogan")
     expect(page).to have_content("Age: 43")
