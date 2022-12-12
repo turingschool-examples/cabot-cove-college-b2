@@ -1,5 +1,5 @@
 <h1>Residents Index</h1>
-
+<h3>Average Age: <%= @residents.resident_average_age %></h3>
 <% @residents.each do |res| %>
   <p>Name: <%= res.name %></p>
   <p>Age: <%= res.age %></p>
