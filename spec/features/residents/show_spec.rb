@@ -29,7 +29,6 @@ RSpec.describe 'resident show page' do
         expect(page).to have_content(@res_1.name)
         expect(page).to have_content(@course_1.name)
         expect(page).to have_content(@course_2.name)
-        save_and_open_page
         
         visit "/residents/#{@res_2.id}"
         
