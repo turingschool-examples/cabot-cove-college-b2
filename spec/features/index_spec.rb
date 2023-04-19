@@ -21,6 +21,13 @@ RSpec.describe 'resident index' do
         visit '/residents'
         
         expect(page).to have_content("Residents Index")
+        expect(page).to have_content("Jessica Fletcher")
+        expect(page).to have_content(@res_2.name)
+        expect(page).to have_content(@res_1.age)
+        expect(page).to have_content(@res_2.age)
+        expect(page).to have_content(@res_1.occupation)
+        expect(page).to have_content(@res_2.occupation)
+        save_and_open_page
       end
      end
    end
