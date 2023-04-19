@@ -1,7 +1,22 @@
-<h2>Residents Index<h2>
-
+<center><h2><p style="color: blue; font-size: 32px;">Residents Index</h2></p></center>
+<div>
+<html>
+  <head>
+    <style>
+      body {
+        background-color: grey; 
+      }
+    </style>
+  </head>
+  <body>
+<center>
 <% @residents.each do |res| %>
-<p>Name: <%= res.name %></p>
-<p>Age: <%= res.age %></p>
-<p>Occupation: <%= res.occupation %></p>
+<p style="color: blue; font-size: 32px;">Name: <%= res.name %></p>
+<p style="color: blue; font-size: 32px;">Age: <%= res.age %></p>
+<p style="color: blue; font-size: 32px;">Occupation: <%= res.occupation %></p>
 <% end %>
+<img src="app/assets/images/chainsaw.jpeg" alt="Chainsaw's Ready!">
+</center>
+</div>
+ </body>
+</html>
