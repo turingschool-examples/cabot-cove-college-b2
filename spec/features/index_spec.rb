@@ -13,9 +13,10 @@ RSpec.describe 'resident index' do
   describe 'as a visitor' do 
     before :each do
      @res_1 = Resident.create!(name: 'AWWWW Biscuits', age: 35, occupation: 'Coder Vet Tech Badass')
-     @res_2 = Resident.create!(name: 'Chainsaw!!!!', age: 40, occupation: 'Hat Tricking Code Genius')
-     @res_3 = Resident.create!(name: 'Jessica Fletcher', age: 65, occupation: 'Mystery writer')
-     @res_4 = Resident.create!(name: 'Dr. Seth Hazlitt', age: 70, occupation: 'Town Doctor')
+     @res_2 = Resident.create!(name: 'Chainsaw!!!!', age: 35, occupation: 'Hat Tricking Code Genius')
+     @res_3 = Resident.create!(name: 'Spencer4hire', age: 35, occupation: 'Project manager wizard!')
+     @res_4 = Resident.create!(name: 'Jessica Fletcher', age: 65, occupation: 'Mystery writer')
+     @res_5 = Resident.create!(name: 'Dr. Seth Hazlitt', age: 70, occupation: 'Town Doctor')
     end
      describe ' when I visit /residents' do 
       it ' I see a list of residents with their name, age, and occupation' do 
@@ -29,7 +30,7 @@ RSpec.describe 'resident index' do
         expect(page).to have_content(@res_2.age)
         expect(page).to have_content(@res_1.occupation)
         expect(page).to have_content(@res_2.occupation)
-        save_and_open_page
+       
       end
      end
    end
