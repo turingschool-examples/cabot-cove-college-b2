@@ -1,16 +1,15 @@
 require 'rails_helper'
 
-RSpec.describe Course, type: :model do
+# User Story 3 of 4
+# As a visitor,
+# When I visit '/courses'
+# I see a list of courses and the number of residents enrolled in each course.
 
-  describe 'validations' do
-    it {should validate_presence_of :name}
-  end
+# (e.g. "Crime Scenes 101: 5"
+#       "Fingerprinting: 10")
 
-  describe 'relationships' do
-    it {should have_many :resident_courses}
-    it {should have_many(:residents).through(:resident_courses)}
-  end
-
+RSpec.describe 'Courses Index page do' do 
+  describe 'as a user when I visit courses' do 
     before :each do 
      @res_1 = Resident.create!(name: 'AWWWW Biscuits', age: 35, occupation: 'Coder Vet Tech Badass')
      @res_2 = Resident.create!(name: 'Chainsaw!!!!', age: 35, occupation: 'Hat Tricking Code Genius')
@@ -31,12 +30,26 @@ RSpec.describe Course, type: :model do
     
     end
 
-    it 'shows all the courses and the number of residents enrolled' do 
-   
-     expect(@crime.enrollment_count).to eq(3)
-     expect(@print.enrollment_count).to eq(3)
-     expect(@tox.enrollment_count).to eq(2)
-     
+    it 'shows all the courses and the number of residents in each one' do 
+        visit "/courses"
+
+        expect(page).to have_content(@crime.name)
+        expect(page).to have_content(@print.name)
+        expect(page).to have_content(@tox.name)
+       
+    end
+   it 'shows all the courses and the number of residents enrolled' do 
+    visit "/courses"
+     within "#course_#{@crime.id}" do 
+      expect(page).to have_content("Residents Enrolled: 3")
+     end
+     within "#course_#{@print.id}" do 
+      expect(page).to have_content("Residents Enrolled: 3")
+     end
+     within "#course_#{@tox.id}" do 
+      expect(page).to have_content("Residents Enrolled: 2")
+     end
    end
 
+  end
 end
