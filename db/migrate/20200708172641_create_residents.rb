@@ -1,4 +1,4 @@
-class CreateResidents < ActiveRecord::Migration[5.1]
+class CreateResidents < ActiveRecord::Migration[7.0]
   def change
     create_table :residents do |t|
       t.string :name
