@@ -14,7 +14,7 @@ Fork this repository and clone your newly created repository.
 * Perform the usual setup steps after cloning a Rails application:
   - `bundle install`
   - `bundle update`
-  - `rake db:{drop,create,migrate,seed}`
+  - `rails db:{drop,create,migrate,seed}`
 ---
 
 ### Requirements
@@ -29,8 +29,8 @@ Fork this repository and clone your newly created repository.
 ### Before Starting User Stories
 
 * This challenge uses a many-to-many table (your migrations are already built!), be sure to check your setup/schema carefully.
-* You will have 10 failing model tests (Let your instructor know if you are not seeing 10 failing tests)
-* Get these 10 tests to pass before moving on to the user stories below.
+* After setup, run `bundle exec rspec` - you will have 10 failing model tests (please let your instructor know if you are not seeing 10 failing tests).
+* Get these 10 tests to pass before moving onto the user stories below.
 
 ---
 
